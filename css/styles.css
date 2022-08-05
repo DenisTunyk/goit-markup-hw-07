@@ -1,27 +1,23 @@
 /* 
 bg-color-primary #2196F3 - голубой цвет фона
-bg-color-secondary #F5F4FA  - серый цвет фона
-text-color-primary #757575  - основной цвет фона
-text-color-secondary #212121 - название кнопок и заголовков
+color-bg-secondary #F5F4FA  - серый цвет фона
+color-text-primary #757575  - основной цвет фона
+color-black #212121 - название кнопок и заголовков
 text-color-activ #2196F3 - активный текст
  */
 
 /* Стили ко всему документу */
 :root {
-  --bg-color-primary: #2196f3;
-  --bg-color-secondary: #f5f4fa;
-  --text-color-btn-primary: #ffffff;
-  --text-color-btn-secondary: #212121;
-  --text-color-primary: #757575;
-  --text-color-secondary: #212121;
-  --text-color-active: #2196f3;
-  --black-color: #212121;
-  --white-color: #ffffff;
-  --ico-color: #AFB1B8;
-  --border-color: #EEEEEE;
-  --boreder-header-color: #ECECEC;
-  --baner-color: #2f303a;
-  --btn-hover: #188CE8;
+  --color-blue: #2196f3;
+  --color-bg-secondary: #f5f4fa;
+  --color-white: #ffffff;
+  --color-black: #212121;
+  --color-text-primary: #757575;
+  --color-ico: #AFB1B8;
+  --color-border: #EEEEEE;
+  --color-header-border: #ECECEC;
+  --color-baner: #2f303a;
+  --color-btn-hover: #188CE8;
 
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -38,7 +34,7 @@ html{
   box-sizing: border-box;
 }
 body{
-  color: var(--text-color-primary);
+  color: var(--color-text-primary);
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.03em;
   font-size: 14px;
@@ -74,10 +70,11 @@ img{
   padding: 94px 0px;
 }
 
-.section-title{
+
+.section__title{
   margin-top: 0px;
   margin-bottom: 50px;
-  color: var(--text-color-secondary);
+  color: var(--color-black);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -121,15 +118,15 @@ img{
 
 /* Стилі для логотипа */
 .logo{
-  color: var(--text-color-active);
+  color: var(--color-blue);
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
 }
-.logo-black{
-  color: var(--black-color);
+.logo--black{
+  color: var(--color-black);
 }
 /* END Стилі для логотипа*/
 
@@ -140,26 +137,26 @@ img{
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  border-bottom: solid 1px var(--boreder-header-color);
+  border-bottom: solid 1px var(--color-header-border);
 }
 .main-nav{
   display: flex;
   align-items: center;
 }
-.site-nav{
+.main-nav__list{
   display:flex;
   margin-left: 93px;
 }
-.site-nav .item + .item{
+.main-nav__list .main-nav__item + .main-nav__item{
   margin-left: 50px;
 }
 
-.site-nav .item{
+.main-nav__list .main-nav__item{
   position: relative;
 }
-.site-nav .link{
+.main-nav__list .link{
   display: block;
-  color: var(--text-color-secondary);
+  color: var(--color-black);
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -168,7 +165,7 @@ img{
   transition-timing-function: var(--timing-function);
 
 }
-.site-nav .link.active::after{
+.main-nav__list .link.active::after{
   content: '';
   position: absolute;
   bottom: -1px;
@@ -177,15 +174,15 @@ img{
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background-color: var(--bg-color-primary);
+  background-color: var(--color-blue);
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
-  color: var(--text-color-active);
+.main-nav__list .link:hover,
+.main-nav__list .link:focus {
+  color: var(--color-blue);
 }
-.site-nav .link.active {
-  color: var(--text-color-active);
+.main-nav__list .link.active {
+  color: var(--color-blue);
 }
 .site-contact{
   display: flex;
@@ -213,9 +210,9 @@ img{
 
 .site-contact .link:hover,
 .site-contact .link:focus {
-  color: var(--text-color-active);
+  color: var(--color-blue);
 }
-.site-contact .svg-img{
+.main-nav__svg{
   margin-right: 10px;
   fill: currentColor;
 }
@@ -255,7 +252,7 @@ img{
   /* padding: 200px 0px; */
   text-align: center;
 
-  background-color: var(--baner-color);
+  background-color: var(--color-baner);
   background-image: linear-gradient(
   to right,
   rgba(47, 48, 58, 0.4),
@@ -266,11 +263,11 @@ img{
   background-size: cover;
   background-repeat: no-repeat;
 }
-.hero .title {
+.hero__title {
   margin: 0 auto;
   max-width: 696px;
   margin-bottom: 40px;
-  color: var(--white-color);
+  color: var(--color-white);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -297,8 +294,8 @@ img{
 
   border: none;
   border-radius: 4px;
-  background-color: var(--bg-color-primary);
-  color: var(--text-color-btn-primary);
+  background-color: var(--color-blue);
+  color: var(--color-white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   transition: background-color 250ms var(--timing-function);
@@ -306,7 +303,7 @@ img{
 
 .btn:hover, 
 .btn:focus{
-  background-color: var(--btn-hover);
+  background-color: var(--color-btn-hover);
 }
 /* END section baner */
 
@@ -326,7 +323,7 @@ img{
   padding-bottom: 25px;
   margin-bottom: 30px;
   border-radius: 4px;
-  background-color: var(--bg-color-secondary);
+  background-color: var(--color-bg-secondary);
 }
 
 /* .site-about-item::before{
@@ -335,7 +332,7 @@ img{
   width: 100%;
   height: 120px;
   margin-bottom: 30px;
-  background-color: var(--bg-color-secondary);
+  background-color: var(--color-bg-secondary);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -359,7 +356,7 @@ img{
 .site-about .section-subtitle {
   margin-bottom: 10px;
   font-size: 14px;
-  color: var(--text-color-secondary);
+  color: var(--color-black);
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
@@ -390,14 +387,14 @@ img{
   line-height: calc(16 / 14);
   text-align: center;
   text-transform: uppercase;
-  color: var(--white-color);
+  color: var(--color-white);
   font-size: 14px;
 }
 /* Section site-work END*/
 
 /* Section our comand */
 .site-command {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--color-bg-secondary);
   text-align: center;
 }
 .site-command .image{
@@ -411,11 +408,11 @@ img{
   flex-basis: calc(100% / 4 - var(--set-margin));
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  background-color: var(--white-color);
+  background-color: var(--color-white);
 }
 
 .site-command .comand-name{
-  color: var(--text-color-btn-secondary);
+  color: var(--color-black);
   font-weight: 500;
   line-height: 1.18;
   font-size: 16px;
@@ -442,7 +439,7 @@ img{
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  fill: var(--ico-color);
+  fill: var(--color-ico);
 
   transition-property: background-color, fill;
   transition-duration: 250ms;
@@ -451,8 +448,8 @@ img{
 }
 .ico-item:hover,
 .ico-item:focus {
-  background-color: var(--bg-color-primary);
-  fill: var(--white-color);
+  background-color: var(--color-blue);
+  fill: var(--color-white);
 }
 /* Flex end ico*/
 
@@ -465,9 +462,9 @@ img{
   /* width: 170px; */
   height: 90px;
   align-items: center;
-  fill: var(--ico-color);
+  fill: var(--color-ico);
   border: 1px solid;
-  border-color: var(--ico-color);
+  border-color: var(--color-ico);
   border-radius: 4px;
 
   transition-property: fill, border-color;
@@ -476,8 +473,8 @@ img{
 }
 .site-clients .out-box:hover,
 .site-clients .out-box:focus{
-  fill: var(--bg-color-primary);
-  border-color: var(--bg-color-primary);
+  fill: var(--color-blue);
+  border-color: var(--color-blue);
 }
 /* Our clients end*/
 
@@ -510,8 +507,8 @@ img{
   }
 
 .filter-button:hover, .filter-button:focus, .active-filter{
-  background-color: var(--bg-color-primary);
-  color: var(--text-color-btn-primary);
+  background-color: var(--color-blue);
+  color: var(--color-white);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -539,14 +536,14 @@ img{
 
 .site-project{
   padding: 20px 24px;
-  border-left: solid 1px var(--border-color);
-  border-right: solid 1px var(--border-color);
-  border-bottom: solid 1px var(--border-color);
+  border-left: solid 1px var(--color-border);
+  border-right: solid 1px var(--color-border);
+  border-bottom: solid 1px var(--color-border);
 }
 
 .site-project-title {
   margin-bottom: 4px;
-  color: var(--text-color-secondary);
+  color: var(--color-black);
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -577,7 +574,7 @@ img{
   align-items: center;
 
   line-height: calc(28 / 18);
-  color: var(--white-color);
+  color: var(--color-white);
   font-size: 18px;
 
   background: rgba(33, 150, 243, 0.9);
@@ -597,7 +594,7 @@ img{
 }
 .site-footer {
   padding: 60px 0px;
-  background-color: var(--baner-color);
+  background-color: var(--color-baner);
 }
 .site-footer .left{
   margin-right: 70px;
@@ -608,8 +605,8 @@ img{
   display: block;
 }
 
-.logo-white { 
-  color: var(--white-color);
+.logo--white { 
+  color: var(--color-white);
 }
 
 .footer-contact{
@@ -642,7 +639,7 @@ img{
 .site-footer .section-subtitle {
   margin-bottom: 20px;
   font-size: 14px;
-  color: var(--white-color);
+  color: var(--color-white);
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
@@ -651,7 +648,7 @@ img{
 
 .site-footer .ico-item{
   background: rgba(255, 255, 255, 0.1);
-  fill: var(--white-color);
+  fill: var(--color-white);
 
   transition-property: background-color;
   transition-duration: 250ms;
@@ -659,7 +656,7 @@ img{
 }
 .site-footer .ico-item:hover,
 .site-footer .ico-item:focus {
-  background-color: var(--bg-color-primary);
+  background-color: var(--color-blue);
 }
 
 /* footer form */
@@ -740,7 +737,7 @@ img{
   left: 50%;
   width: 528px;
   height: 581px;
-  background-color: var(--white-color);
+  background-color: var(--color-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 40px;
@@ -768,7 +765,7 @@ img{
 .modal-btn:hover,
 .modal-btn:focus
 {
-  fill: var(--bg-color-primary);
+  fill: var(--color-blue);
 }
 
 .modal .form-title{
@@ -778,7 +775,7 @@ img{
   line-height: calc(23 / 20);
   font-size: 20px;
   text-align: center;
-  color: var(--text-color-btn-secondary);
+  color: var(--color-black);
 }
 .modal .form-field{ margin-bottom: 10px; }
 .modal .form-label {
@@ -807,12 +804,12 @@ img{
 }
 .modal .form-input:focus, .modal .form-input:hover{
   outline: none;
-  border-color: var(--bg-color-primary);
+  border-color: var(--color-blue);
 }
 .modal .form-input:focus + .icon, .modal .form-input:hover + .icon{
-  fill: var(--bg-color-primary);
+  fill: var(--color-blue);
 }
-.form-field .icon:hover { fill: var(--bg-color-primary); }
+.form-field .icon:hover { fill: var(--color-blue); }
 
 .form-field .icon{
   position: absolute;
@@ -822,7 +819,7 @@ img{
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  fill: var(--black-color);
+  fill: var(--color-black);
 
   transition: fill 250ms var(--timing-function);
 }
@@ -850,10 +847,10 @@ img{
 }
 .form-textarea:focus, .form-textarea:hover{
   outline: none;
-  border-color: var(--bg-color-primary);
+  border-color: var(--color-blue);
 }
 
-.form .form-button:hover{background-color: var(--btn-hover);}
+.form .form-button:hover{background-color: var(--color-btn-hover);}
 .form-check-label{
   display: flex;
   align-items: center;
@@ -865,10 +862,10 @@ img{
 }
 .form-check-label:hover > .icon
 {
-  border: solid 2px var(--bg-color-primary);
+  border: solid 2px var(--color-blue);
 }
 .form-check-label a{
-  color: var(--bg-color-primary);
+  color: var(--color-blue);
 }
 .checkbox{
   -webkit-appearance: none;
@@ -883,19 +880,19 @@ img{
   background: #FFFFFF;
   /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2); */
   border-radius: 4px;
-  border: solid 2px var(--black-color);
+  border: solid 2px var(--color-black);
   transition: border 250ms var(--timing-function), 
               background 250ms var(--timing-function);
 }
 .checkbox:checked + .icon{
   background-image: url(../images/modal/icon-check.svg);
-  background-color: var(--bg-color-primary);
+  background-color: var(--color-blue);
   background-size: contain;
   background-origin: border-box;
-  border: 2px solid var(--bg-color-primary);
+  border: 2px solid var(--color-blue);
 }
 .checkbox:focus+.icon {
-  border: solid 2px var(--bg-color-primary);
+  border: solid 2px var(--color-blue);
 }
 
 /* Modal window end */
