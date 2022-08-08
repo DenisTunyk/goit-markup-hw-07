@@ -2,7 +2,7 @@
     padding-bottom: 0px;
 }
 .site-about__item {
-    flex-basis: calc(100% / 4 - $set-margin);
+    flex-basis: calc(100% / 4 - var(--set-margin));
 }
 .site-about__svg {
     display: flex;

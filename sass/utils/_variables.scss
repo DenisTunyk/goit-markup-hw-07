@@ -12,5 +12,11 @@ $color-btn-hover: #188CE8;
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 /* Flex margin */
-$set-margin: 30px;
-$set-margin-ico: 10px;
+// $set-margin: 30px;
+// $set-margin-ico: 10px;
+
+:root{
+    --set-margin: 30px;
+    --set-margin-ico: 10px;
+    --set-item: 4;
+}

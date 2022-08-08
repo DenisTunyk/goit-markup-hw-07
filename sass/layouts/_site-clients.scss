@@ -1,5 +1,5 @@
 .site-clients__item{
-    flex-basis: calc(100% /6 - $set-margin);
+    flex-basis: calc(100% /6 - var(--set-margin));
 }
 .site-clients__link{
     display: flex;
